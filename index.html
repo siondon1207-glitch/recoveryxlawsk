@@ -1,23 +1,818 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+
+
+  <!-- Schema.org LegalService 마크업 (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "천안개인회생 변호사 전문 법률 상담 센터",
+    "image": "https://law.reliabledone.com/images/cheonan-lawyer-logo.png",
+    "url": "https://law.reliabledone.com/cheonan-rehabilitation",
+    "telephone": "041-555-9876",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "충청남도 천안시 동남구 청당동 법원앞 로펌타워 3층",
+      "addressLocality": "천안시 동남구 청당동",
+      "addressRegion": "충청남도",
+      "postalCode": "31156",
+      "addressCountry": "KR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "36.787889",
+      "longitude": "127.156824"
+    },
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "천안시"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "아산시"
+      }
+    ],
+    "priceRange": "₩₩₩",
+    "description": "2026년 최신 기준 중위소득 반영 천안개인회생 변호사 전문 법률 상담 센터. 대전회생법원 관할 신부동, 두정동, 쌍용동, 불당동 등 천안 전 지역의 20대, 30대, 40대, 50대 맞춤형 개인회생 절차 및 예상 변제금 계산기 제공."
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-dark: #172554;
+      --secondary: #3b82f6;
+      --text-dark: #1e293b;
+      --text-light: #64748b;
+      --bg-light: #f8fafc;
+      --bg-white: #ffffff;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --border-color: #cbd5e1;
+    }
+    
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.8;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: var(--bg-white);
+      padding: 60px 20px;
+      text-align: center;
+      border-bottom: 5px solid var(--accent);
+    }
+    
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0 0 15px 0;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    
+    header p {
+      font-size: 1.2rem;
+      margin: 0 0 30px 0;
+      opacity: 0.9;
+    }
+    
+    nav {
+      background: var(--bg-white);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav li {
+      margin: 0;
+    }
+    
+    nav a {
+      display: block;
+      padding: 15px 20px;
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+    }
+    
+    nav a:hover {
+      background: var(--bg-light);
+      color: var(--secondary);
+    }
+    
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    
+    section {
+      background: var(--bg-white);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+      margin-bottom: 30px;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    
+    h2 {
+      color: var(--primary-dark);
+      font-size: 1.8rem;
+      border-left: 5px solid var(--accent);
+      padding-left: 15px;
+      margin-top: 0;
+      margin-bottom: 25px;
+    }
+    
+    h3 {
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    
+    p {
+      margin-top: 0;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+    
+    ul, ol {
+      margin-top: 0;
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+    
+    li {
+      margin-bottom: 8px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 0.95rem;
+    }
+    
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 14px;
+      text-align: left;
+    }
+    
+    th {
+      background: var(--primary);
+      color: var(--bg-white);
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+      background: var(--bg-light);
+    }
+    
+    .btn-cta {
+      display: inline-block;
+      padding: 15px 35px;
+      background: var(--accent);
+      color: var(--bg-white);
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 4px 6px rgba(217, 119, 6, 0.2);
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+    
+    .btn-cta:hover {
+      background: #b45309;
+      transform: translateY(-1px);
+    }
+    
+    .btn-cta:active {
+      transform: translateY(1px);
+    }
+    
+    .highlight-box {
+      background: var(--accent-light);
+      border-left: 5px solid var(--accent);
+      padding: 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 25px 0;
+    }
+    
+    /* 자가진단 계산기 디자인 */
+    .calculator-container {
+      background: var(--bg-light);
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      padding: 30px;
+      margin: 30px 0;
+    }
+    
+    .calc-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+    
+    .calc-col {
+      flex: 1;
+      min-width: 200px;
+      margin-right: 15px;
+      margin-bottom: 15px;
+    }
+    
+    .calc-col:last-child {
+      margin-right: 0;
+    }
+    
+    .calc-label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--primary-dark);
+    }
+    
+    .calc-input, .calc-select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      background: var(--bg-white);
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    
+    .calc-input:focus, .calc-select:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+    
+    /* 심층 상담 신청 폼 디자인 */
+    .contact-form {
+      background: var(--bg-white);
+      border: 2px solid var(--primary);
+      border-radius: 12px;
+      padding: 40px;
+      margin-top: 40px;
+    }
+    
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+    
+    @media (max-width: 768px) {
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--primary-dark);
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 1rem;
+      box-sizing: border-box;
+      background: var(--bg-light);
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      background: var(--bg-white);
+    }
+    
+    .form-checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    
+    .form-checkbox-label {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+    
+    .form-checkbox-label input {
+      margin-right: 8px;
+      transform: scale(1.1);
+    }
+    
+    footer {
+      background: var(--primary-dark);
+      color: var(--bg-white);
+      padding: 50px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 5px solid var(--accent);
+    }
+    
+    footer .footer-links {
+      margin-bottom: 20px;
+    }
+    
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 15px;
+    }
+    
+    footer a:hover {
+      text-decoration: underline;
+    }
+    
+    .authoritative-links {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 30px 0;
+    }
+    
+    .authoritative-links h4 {
+      margin-top: 0;
+      color: var(--primary-dark);
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+    
+    .authoritative-links ul {
+      margin-bottom: 0;
+    }
+    
+    .authoritative-links a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    
+    .authoritative-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>천안개인회생 변호사 선임 가이드</h1>
+    <p>2026년 대전회생법원 실무 준칙 반영 최저생계비 분석 및 합리적 소명 방안</p>
+    <a class="btn-cta" href="#contact">변호사 1대1 무상 상담 신청</a>
+  </header>
+
+  <nav aria-label="메인 네비게이션">
+    <ul>
+      <li><a href="#overview">제도 개요</a></li>
+      <li><a href="#court-standard">2026년 생계비 기준</a></li>
+      <li><a href="#calculator">변제금 자가 계산기</a></li>
+      <li><a href="#regional-analysis">천안 지역별 분석</a></li>
+      <li><a href="#demographics">연령별 대책</a></li>
+      <li><a href="#selection-guide">로펌 선택 핵심</a></li>
+      <li><a href="#contact">심층 상담 신청</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="overview">
+      <h2>천안개인회생 및 채무조정 제도의 본질적 이해</h2>
+      <p>
+        감당하기 어려운 채무 독촉과 강제집행의 위기 속에서 경제적 재기를 도모하기 위해서는 신뢰할 수 있는 구제 수단을 신속하게 탐색해야 합니다. 
+        개인회생 제도는 무담보채무의 경우 10억 원, 담보채무의 경우 15억 원 이하의 부채를 안고 있는 급여소득자 또는 영업소득자가 장래에 정기적이고 확실한 수입을 얻을 가능성이 있을 때 이용할 수 있는 법적 구제 수단입니다. 
+        체계적인 법률적 분석 없이 무작정 신청에 나설 경우 보정 명령 대응 미비나 청산가치 미확보 등의 사유로 기각될 위험이 있으므로 정교한 사전 조율이 요구됩니다.
+      </p>
+      
+      <p>
+        최근 많은 채무자분들이 <strong>네이버</strong>, <strong>구글</strong>, <strong>유튜브</strong> 검색을 통해 정보를 취득하고, <strong>트위터</strong>, <strong>인스타그램</strong>, <strong>페이스북</strong>, <strong>카카오톡</strong> 등의 사회관계망서비스(SNS)에서 다양한 성공 사례와 실시간 의견을 교류하고 있습니다. 특히 인터넷 커뮤니티인 <strong>디시</strong>인사이드 개인회생 갤러리나 <strong>보배드림</strong> 금융 게시판, 청년층이 주로 이용하는 <strong>펨코</strong> 및 <strong>에펨코리아</strong> 등에서 실제 면책을 받은 사용자들의 생생한 <strong>내돈내산</strong> 성격의 솔직한 <strong>후기</strong>나 진행 과정 상의 유용한 조언을 참고하시는 경우가 증가하고 있습니다.
+      </p>
+      
+      <p>
+        더불어 최근 스마트폰의 대중화로 인해 <strong>토스</strong>와 같은 핀테크 플랫폼이나 자가진단 <strong>앱</strong> 또는 <strong>어플</strong>을 통하여 일차적인 신용 상태를 진단받고, <strong>제미나이</strong>(<strong>Gemini</strong>)나 <strong>챗지피티</strong>(<strong>ChatGPT</strong>) 같은 최신 <strong>AI</strong> 엔진을 활용하여 기초적인 제도의 구조적 <strong>차이점</strong>이나 법률 상식을 사전에 습득하기도 합니다. 이러한 온라인 <strong>사이트</strong>나 디지털 계산 도구는 채무자가 자신의 채무 상태와 월 <strong>예상</strong> 수입을 기입함으로써 월 납입 <strong>금액</strong>과 상환 <strong>비용</strong>을 손쉽게 <strong>계산</strong>해 볼 수 있도록 설계된 자동 <strong>계산기</strong>를 내장하고 있어, 대략적인 <strong>견적</strong>을 신속하게 확인하는 데 큰 도움이 됩니다.
+      </p>
+
+      <div class="highlight-box">
+        <strong>법률적 경고:</strong> 인터넷상에 유포되는 자가진단 도구는 일반적인 수치만을 대입하여 연산하는 한계가 있으므로, 실제 면책결정을 받기 위해서는 청산가치 평가 방법, 가용소득 산출 요령 등을 변호사와 대면하여 법률적 타당성을 검증해야 합니다.
+      </div>
+    </section>
+
+    <section id="court-standard">
+      <h2>2026년 기준 중위소득 및 가구별 최저생계비 분석</h2>
+      <p>
+        개인회생 변제계획안 작성의 가장 핵심적인 척도는 신청인의 가구원 수에 따른 최저생계비 산정입니다. 
+        대한민국 법원에서는 매년 보건복지부가 고시하는 기준 중위소득의 60%를 최저생계비로 인정하고 있으며, 2026년도 최저생계비 기준은 전년 대비 역대 최대 수준인 약 6.51% 이상 인상되어 채무자들의 매달 납입 의무액인 변제금 부담이 대폭 줄어들게 되었습니다.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>가구 구성원 수</th>
+            <th>2026년 기준 중위소득</th>
+            <th>법원 인정 최저생계비 (60% 수준)</th>
+            <th>전년 대비 변제금 인하 효과 (평균 금액)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1인 가구</td>
+            <td>2,564,238원</td>
+            <td>1,538,543원</td>
+            <td>매월 약 103,335원 추가 소득 보전</td>
+          </tr>
+          <tr>
+            <td>2인 가구</td>
+            <td>4,199,292원</td>
+            <td>2,519,575원</td>
+            <td>매월 약 159,980원 추가 소득 보전</td>
+          </tr>
+          <tr>
+            <td>3인 가구</td>
+            <td>5,359,036원</td>
+            <td>3,215,422원</td>
+            <td>매월 약 200,210원 추가 소득 보전</td>
+          </tr>
+          <tr>
+            <td>4인 가구</td>
+            <td>6,494,738원</td>
+            <td>3,896,843원</td>
+            <td>매월 약 238,179원 추가 소득 보전</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        변제금 계산은 채무자의 실질 월 소득에서 위 표에 명시된 생계비를 공제한 나머지 금액인 가용소득을 매월 투입하는 것을 원칙으로 합니다. 
+        만약 부양가족으로 인정받아야 할 대상이 있음에도 불구하고 이를 입증하는 자료가 불충분하다면, 법원은 1인 가구 생계비만을 적용하여 변제금을 높게 책정할 수 있습니다. 
+        천안 지역 채무자의 경우 신설된 대전회생법원의 엄격한 보정 절차를 거쳐야 하므로 생계비 외에 추가 주거비, 의료비, 교육비 등을 합리적으로 소명하는 노하우가 필수적입니다.
+      </p>
+    </section>
+
+    <section id="calculator">
+      <h2>2026년 기준 개인회생 간이 변제금 자가 계산기</h2>
+      <p>
+        신청자의 자산 상태와 수입 정보를 대입하여 매달 법원에 납부할 가능성이 높은 예상 변제금과 탕감액을 실시간으로 산출해 보실 수 있습니다. 
+        해당 연산 시스템은 2026년 3월 개원한 대전회생법원의 청산가치 보장 원칙을 기반으로 동작합니다.
+      </p>
+
+      <div class="calculator-container">
+        <div class="calc-row">
+          <div class="calc-col">
+            <label class="calc-label" for="calc-income">본인의 월 평균 세후 소득 (단위: 만원)</label>
+            <input type="number" id="calc-income" class="calc-input" placeholder="예: 250" min="1">
+          </div>
+          <div class="calc-col">
+            <label class="calc-label" for="calc-dependants">부양 가족 수 (본인 포함 가구원 수)</label>
+            <select id="calc-dependants" class="calc-select">
+              <option value="1">1인 가구 (본인 홀로 신청)</option>
+              <option value="2">2인 가구 (미성년 자녀 등 1인 부양)</option>
+              <option value="3">3인 가구 (부양가족 2인)</option>
+              <option value="4">4인 가구 (부양가족 3인)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calc-row">
+          <div class="calc-col">
+            <label class="calc-label" for="calc-debt">총 원금 부채 규모 (단위: 만원)</label>
+            <input type="number" id="calc-debt" class="calc-input" placeholder="예: 6000" min="1">
+          </div>
+          <div class="calc-col">
+            <label class="calc-label" for="calc-assets">보유 재산 합계 (청산가치: 자산 총액 - 단위: 만원)</label>
+            <input type="number" id="calc-assets" class="calc-input" placeholder="예: 1000" min="0">
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 10px;">
+          <button type="button" class="btn-cta" onclick="calculateRehabilitation()">예상 변제금 및 면책율 계산하기</button>
+        </div>
+
+        <div id="calc-result-box" style="margin-top: 20px;">
+          <!-- 계산 결과가 여기에 동적으로 삽입됩니다. -->
+        </div>
+      </div>
+    </section>
+
+    <section id="regional-analysis">
+      <h2>천안/아산 지역의 경제적 특성과 법률적 접근 방안</h2>
+      <p>
+        천안시는 충청남도 최대의 도시로서 동남구와 서북구로 나뉘며, 급격한 산업 발전과 더불어 인접한 아산시와 사실상의 단일 생활권을 공유하고 있습니다. 
+        각 구역별 경제 구조와 산업 기반의 차이에 따라 채무가 발생하게 되는 근본 원인과 대안 설계 방식에도 차별화된 접근이 요구됩니다.
+      </p>
+
+      <h3>상업 및 소상공인 중심 구역의 부채 해소 전략</h3>
+      <p>
+        전통적으로 유동 인구가 집중되는 <strong>신부동</strong> 버스터미널 배후 상권 및 종합 유흥 중심지인 <strong>두정동</strong>, 그리고 대표적인 소상공인 밀집 구역인 <strong>성정동</strong> 일대에서는 무리한 창업 대출이나 임대료 상승, 원자재 가격 급등으로 인한 매출 악화로 고통받는 자영업자의 비중이 높습니다. 
+        이러한 소상공인 채무조정 시에는 카드 단말기 매출 압류를 선제적으로 방어하는 것이 최우선 과제이며, 대전회생법원이 요구하는 사업 영속성에 관한 소명 방안을 세밀하게 조율해야 합니다.
+      </p>
+
+      <h3>신도시 및 대단지 주거 구역의 가계 부채 및 주택 자금 관리</h3>
+      <p>
+        신흥 주거 단지가 포진한 <strong>불당동</strong>, 학군 중심의 <strong>백석동</strong> 및 남부 대단지 아파트 구역인 <strong>쌍용동</strong>, <strong>신방동</strong>, <strong>용곡동</strong> 등은 30대와 40대 가장들이 주로 거주하며, 아파트 담보 대출 및 과도한 가계 생활비 융통으로 인한 다중채무에 직면하고 있습니다. 
+        특히 최근 금리 변동성에 노출된 주택담보대출의 변제 계획 마련 시 신용회복위원회의 주담대 연계 제도를 적절히 조화시켜 거주 중인 자택을 처분하지 않고 면책을 유도하는 전문화된 컨설팅이 요구됩니다.
+      </p>
+
+      <h3>행정지구 및 기타 주거 배후단지의 법조 조력 프로세스</h3>
+      <p>
+        동남구 행정의 중심축인 <strong>청수동</strong> 및 <strong>청당동</strong> 법조타운은 천안지청과 법원이 위치하여 지리적으로 신속한 사건 접수와 보정서 제출에 유리한 이점을 지닙니다. 
+        이와 인접한 <strong>삼룡동</strong>, <strong>다가동</strong>, <strong>원성동</strong>, <strong>구성동</strong> 등 노후 주거 지역과 구도심 재개발 여파를 겪고 있는 <strong>봉명동</strong>, <strong>영성동</strong>, <strong>문화동</strong>, <strong>사직동</strong>, <strong>대흥동</strong>, <strong>와촌동</strong> 일대는 연령대가 높은 신청자들의 의료비 부채 비율이 높으므로, 신청 초기 채무 독촉을 차단하기 위한 금지명령 결정을 확보해 심리적 안정을 도모해야 합니다.
+      </p>
+
+      <h3>대학가 밀집 지역 및 천안 아산 외곽 도농복합지구</h3>
+      <p>
+        단국대 및 상명대 등 다수의 캠퍼스가 밀집한 <strong>안서동</strong>, <strong>유량동</strong>, <strong>신안동</strong> 지역은 학자금 대출 및 초기 모바일 불법 대출에 빠진 20대 청년층이 밀집해 있어 신속한 청년 채무자 전담 보정 가이드라인을 적용하여 원금을 적극 감면받아야 합니다. 
+        한편 천안 외곽의 공업 및 농업 복합 구역인 <strong>목천읍</strong>, <strong>성환읍</strong>, <strong>직산읍</strong> 일대와 아산시의 배후 기지인 <strong>배방읍</strong>, <strong>온양온천</strong> 구역의 거주자들은 소득 증빙 서류 발급이 난해한 경우가 많아 일용직 및 불규칙 소득 증빙을 위한 간접 소명 기법을 체계적으로 수립하여 심사관을 납득시킬 수 있어야 합니다.
+      </p>
+    </section>
+
+    <section id="demographics">
+      <h2>연령별 경제적 고충 및 맞춤형 개인회생 대응 방안</h2>
+      <p>
+        부채가 누적되어 채무 불이행 상태에 빠지게 되는 동기와 생활 반경은 연령대별로 상당한 차이를 보입니다. 
+        천안개인회생 변호사는 단순한 대행자가 아니라 각 세대의 고통을 공감하고 법률상의 취약점을 보강해 주는 역할을 수행해야 합니다.
+      </p>
+
+      <ul>
+        <li>
+          <strong>20대 청년 채무조정:</strong> 주식이나 가상화폐 투자 실패, 또는 취업 준비 단계에서의 소액 생활비 누적으로 연체가 빈발합니다. 최근 대전회생법원은 20대 청년층의 주식 및 코인 투자 손실액에 대해 청산가치(재산)에 반영하지 않는 준칙을 엄밀히 심사하므로, 재기의 기회를 박탈당하지 않도록 논리적인 보정 처리가 최선입니다.
+        </li>
+        <li>
+          <strong>30대 직장인 채무조정:</strong> 결혼 자금 마련 및 전세 자금 대출 상환 부담 속에서 카드 돌려막기로 파탄에 이르는 가구가 많습니다. 급여 소득의 원천징수 자료를 정밀하게 분석하여 가용 소득을 최대한 낮춤으로써 매달 고정적으로 지출되어야 할 기본 생계 여건을 우선 보호합니다.
+        </li>
+        <li>
+          <strong>40대 가장 채무조정:</strong> 자녀 교육비 지출이 본격화되고 부양 의무 가구원 수가 가장 많아지는 시기입니다. 4인 가구 기준 법원 보장 최저생계비 외에 자녀의 교육, 보육 실비 등을 소명서로 제출해 추가 생계비 인정을 받는 고도의 소송 전략이 필요합니다.
+        </li>
+        <li>
+          <strong>50대 소상공인 채무조정:</strong> 오랜 기간 운영하던 개인 사업장의 도산이나 연대보증인 채무 발생으로 채권 압류 위기에 직면한 경우가 다수입니다. 영업 장부 분석을 통해 정확한 가용소득을 분리해 내고 복잡한 담보 채무의 경계를 명확하게 정립하는 정교한 재무 컨설팅이 요구됩니다.
+        </li>
+        <li>
+          <strong>60대 은퇴자 채무조정:</strong> 정기 소득이 상실된 상황에서 만성 질환으로 인한 고액의 의료 비용 부담이나 자녀 지원 목적의 융통 자금 독촉으로 채무가 장기화됩니다. 기초연금 외에 고정 수입 확보가 어려우므로 소액 일용 수입을 근거로 삼거나 법원의 파산 면책 절차로의 신속한 전향을 비교 검토해야 합니다.
+        </li>
+      </ul>
+    </section>
+
+    <section id="selection-guide">
+      <h2>천안개인회생 변호사 수임처 선택 시 필수 고려 요소</h2>
+      <p>
+        신청자가 법무 대리인을 선정하는 과정에서 범하기 쉬운 과오 중 하나는 오로지 초기 진행 <strong>비용</strong>이 저렴하거나 파격적으로 싼 곳만을 찾아 헤매는 것입니다. 
+        개인회생 절차는 개시 신청부터 보정, 채권자 집회, 그리고 최종 인가 결정에 이르기까지 최소 6개월에서 1년 이상 지속되는 엄밀한 사법 소송 절차입니다. 
+        따라서 실체적인 면책 성공률과 법원의 요구에 즉시 소통할 수 있는 전문적인 시스템을 갖추었는지 비교해 보고 의사결정을 내려야 경제적 피해를 예방할 수 있습니다.
+      </p>
+
+      <div class="highlight-box">
+        <strong>불법 브로커 주의보:</strong> 변호사가 면담에 직접 참여하지 않고 비자격자인 불법 사무장이나 대리 업체가 사건을 주도하여 임의로 수임료 <strong>할인</strong>이나 <strong>현금지원</strong>, 또는 미끼성 <strong>사은품</strong> 및 기프트 <strong>상품권</strong> 등을 미끼로 고객 유치 행위를 일삼는 곳은 법적 자격 정지 또는 형사 처벌 대상일 수 있습니다. 초기 계약 시 수임처의 명확한 실체와 변호사의 직접 <strong>상담</strong> 여부를 반드시 검토하십시오.
+      </div>
+
+      <p>
+        본 센터는 수임료 납부의 부담을 경감하기 위해 무이자 분납 제도를 도입하여 신용회복이 절실한 서민들에게 실질적인 <strong>혜택</strong>을 분배하고 있습니다. 
+        채권 압류의 위험으로부터 채무자의 주거와 생활 도구를 온전히 보장받을 수 있는 법무부 지정 대리 자격으로 직접 보정을 완결합니다.
+      </p>
+    </section>
+
+    <section class="authoritative-links">
+      <h4>신뢰할 수 있는 공인 외부 법률 정보처 및 참조 자료</h4>
+      <p>본 센터는 채무자의 명확한 권익 확보를 위하여 사설 광고 목적의 사이트가 아닌, 공신력 있는 기관의 정보를 투명하게 공유해 드립니다.</p>
+      <ul>
+        <li>
+          <a href="https://recoverybylawx.koreahankang.com" target="_blank" rel="noopener noreferrer">공인 사법 절차 및 채무자 구제 지침망 (reliabledone.com 통합본부)</a>: 법적 도산 절차의 정당한 사법적 효력과 면책 요건을 명확히 규정하는 종합 채무 해소 가이드 플랫폼입니다.
+        </li>
+        <li>
+          <a href="https://namu.wiki/w/%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D" target="_blank" rel="noopener noreferrer">나무위키 개인회생 정의 및 개념 백과사전</a>: 개인회생 제도의 법률적 구조, 역사적 변천사 및 자격 요건을 알기 쉽게 정리한 대중적 참조 자료입니다.
+        </li>
+        <li>
+          <a href="https://www.klac.or.kr" target="_blank" rel="noopener noreferrer">대한법률구조공단 공식 웹사이트</a>: 경제적 취약 계층을 위한 국선 변론 및 채무조정 무료 법률 상담 제도를 관장하는 산하 공공기관 채널입니다.
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact-form">
+      <h2>천안개인회생 정밀 분석 및 1:1 맞춤 법률상담 신청</h2>
+      <p>
+        아래 양식을 상세히 기입해 주시면, 도산법 전문 법률가가 직접 신용 정보를 분석하여 예상 변제금과 탕감 가능성을 24시간 이내에 진단해 드립니다. 
+        작성해 주신 소중한 개인 정보는 변호사법 제26조에 의해 비밀이 보장됩니다.
+      </p>
+
+      <form action="/submit-rehabilitation" method="POST">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="user-name">신청인 성명</label>
+            <input type="text" id="user-name" name="user_name" class="form-control" required placeholder="홍길동">
+          </div>
+          <div class="form-group">
+            <label for="user-phone">연락처 (전화번호)</label>
+            <input type="tel" id="user-phone" name="user_phone" class="form-control" required placeholder="010-1234-5678" pattern="[0-9\-]+">
+          </div>
+          
+          <div class="form-group">
+            <label for="user-region">거주 지역 (동/읍/면 단위 상세기입)</label>
+            <input type="text" id="user-region" name="user_region" class="form-control" required placeholder="예: 천안시 서북구 불당동">
+          </div>
+          <div class="form-group">
+            <label for="user-income-type">주요 소득원 유형</label>
+            <select id="user-income-type" name="user_income_type" class="form-control" required>
+              <option value="">선택하세요</option>
+              <option value="급여소득">급여소득 (일반 직장인 / 정규직 / 비정규직)</option>
+              <option value="영업소득">영업소득 (개인 자영업자 / 소상공인)</option>
+              <option value="일용직/프리랜서">일용직 / 아르바이트 / 프리랜서 수입</option>
+              <option value="기타">기타 소득 (소명 필요)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="user-total-debt">예상되는 총 부채액 (원금 합산 기준)</label>
+            <select id="user-total-debt" name="user_total_debt" class="form-control" required>
+              <option value="">부채 범위를 선택해 주세요</option>
+              <option value="3천만원 미만">3,000만 원 미만</option>
+              <option value="3천만원~5천만원">3,000만 원 이상 ~ 5,000만 원 미만</option>
+              <option value="5천만원~1억원">5,000만 원 이상 ~ 1억 원 미만</option>
+              <option value="1억원 이상">1억 원 이상 (상세 기재 요망)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="user-assets-detail">주요 보유 자산 종류 (부동산 / 차량 / 예금 등)</label>
+            <input type="text" id="user-assets-detail" name="user_assets_detail" class="form-control" placeholder="예: 거주 주택 임차보증금 2천만원">
+          </div>
+
+          <div class="form-group full-width">
+            <label>채무 발생 사유 (중복 선택 가능)</label>
+            <div class="form-checkbox-group">
+              <label class="form-checkbox-label">
+                <input type="checkbox" name="debt_reason" value="생활비 부족"> 사업 실패 및 매출 급감
+              </label>
+              <label class="form-checkbox-label">
+                <input type="checkbox" name="debt_reason" value="가계 생활비 누적"> 주거비 및 가계 생활비 융통
+              </label>
+              <label class="form-checkbox-label">
+                <input type="checkbox" name="debt_reason" value="가상자산/주식 투자"> 가상자산 / 주식 / 스포츠 토토 실패
+              </label>
+              <label class="form-checkbox-label">
+                <input type="checkbox" name="debt_reason" value="고액 의료비"> 질병으로 인한 고액 의료 비용
+              </label>
+              <label class="form-checkbox-label">
+                <input type="checkbox" name="debt_reason" value="타인 보증 채무"> 타인을 위한 보증 채무의 양도
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="user-message">변호사에게 전하고 싶은 긴급 요청 사항</label>
+            <textarea id="user-message" name="user_message" rows="4" class="form-control" placeholder="예: 현재 급여 및 통장 압류 위기에 처해 있어 빠른 금지명령 확보가 절실합니다."></textarea>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 15px;">
+          <button type="submit" class="btn-cta" style="width: 100%; max-width: 500px;">합리적인 수임 안내 및 무료 적격 심사 받기</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+
+  <script>
+    function calculateRehabilitation() {
+      const incomeInput = document.getElementById('calc-income').value;
+      const dependantsInput = document.getElementById('calc-dependants').value;
+      const debtInput = document.getElementById('calc-debt').value;
+      const assetsInput = document.getElementById('calc-assets').value;
+
+      if (!incomeInput || !dependantsInput || !debtInput || !assetsInput) {
+        alert('모든 입력 칸을 정확하게 채워주시기 바랍니다.');
+        return;
+      }
+
+      const income = parseFloat(incomeInput) * 10000;
+      const dependants = parseInt(dependantsInput);
+      const debt = parseFloat(debtInput) * 10000;
+      const assets = parseFloat(assetsInput) * 10000;
+
+      if (income <= 0 || debt <= 0) {
+        alert('소득과 채무액은 양의 정수만 입력할 수 있습니다.');
+        return;
+      }
+
+      if (debt > 2500000000) {
+        alert('부채 규모가 개인회생 한도인 25억원을 초과하여 일반회생 절차를 검토해 보셔야 합니다.');
+        return;
+      }
+
+      // 2026년 기준 중위소득 60% 가구원수별 최저생계비 고정 수치
+      const livingCosts = {
+        1: 1538543,
+        2: 2519575,
+        3: 3215422,
+        4: 3896843
+      };
+
+      const minLivingCost = livingCosts[dependants];
+
+      // 가용소득 계산 (월 변제금)
+      let monthlyRepayment = income - minLivingCost;
+
+      if (monthlyRepayment <= 0) {
+        document.getElementById('calc-result-box').innerHTML = `
+          <div style="background:#fff5f5; color:#c53030; padding:20px; border-radius:8px; border:1px solid #feb2b2;">
+            현재 기입하신 소득(${income.toLocaleString()}원)이 2026년 가구 부양 최저생계비(${minLivingCost.toLocaleString()}원)보다 적어 기본 요건 충족이 어렵습니다. 추가 부양가족 제외 여부 설정이나 소득 증가 증빙 가능 여부에 관하여 변호사 무상 소명 진단을 먼저 받아보실 것을 적극 권고합니다.
+          </div>
+        `;
+        return;
+      }
+
+      // 청산가치 보장의 원칙 (36개월 총 납입금이 자산 가치보다 커야 함)
+      let totalRepayment36 = monthlyRepayment * 36;
+      let isAssetAdjusted = false;
+
+      if (totalRepayment36 < assets) {
+        // 청산가치를 보장하기 위해 월 변제금 강제 상향 조정
+        monthlyRepayment = Math.ceil(assets / 36);
+        totalRepayment36 = monthlyRepayment * 36;
+        isAssetAdjusted = true;
+      }
+
+      // 만일 변제계획안이 부채 총액을 초과할 경우 부채만큼만 납부하도록 제한
+      if (totalRepayment36 > debt) {
+        monthlyRepayment = Math.ceil(debt / 36);
+        totalRepayment36 = debt;
+      }
+
+      const totalRelief = debt - totalRepayment36;
+      const reliefRate = ((totalRelief / debt) * 100).toFixed(1);
+
+      let resultHtml = `
+        <div style="background:#f0fdf4; color:#166534; padding:25px; border-radius:8px; border:1px solid #bbf7d0; margin-top:20px;">
+          <h4 style="margin-top:0; color:#14532d; font-size:1.15rem; font-weight:700;">2026년 기준 자가진단 예상 산출 결과</h4>
+          <p>법정 보장 최저생계비 제외 후 귀하의 <strong>예상 월 납입 변제금</strong>은 매월 약 <span style="font-size:1.25rem; color:#b91c1c; font-weight:800;">${Math.round(monthlyRepayment).toLocaleString()}원</span> 입니다. (36개월 납입 예정 기준)</p>
+          <p><strong>3년 총 예상 변제액:</strong> ${Math.round(totalRepayment36).toLocaleString()}원</p>
+          <p><strong>총 채무 면책 예상 금액(탕감 혜택):</strong> <span style="font-size:1.15rem; color:#b91c1c; font-weight:800;">${Math.round(totalRelief).toLocaleString()}원</span> (원금 대비 약 ${reliefRate}% 감면)</p>
+      `;
+
+      if (isAssetAdjusted) {
+        resultHtml += `
+          <div style="margin-top:12px; font-size:0.9rem; color:#9a3412; background:#fff7ed; padding:12px; border-radius:6px; border:1px solid #ffedd5;">
+            주의 사항: 채무자가 현재 소유하고 있는 재산 가치(${assets.toLocaleString()}원)가 가용 소득 합산액보다 크기 때문에 <strong>청산가치 보장 원칙</strong>이 우선 작동하여 월 변제금이 가중되었습니다. 재산 가치 평가 절차에서 보증금 공제 범위나 양도 자산 소명 여부에 따라 변제금을 추가로 경감시킬 소지가 있으므로 상세 소명 방안에 관하여 변호사 정밀 상담을 진행하시기 바랍니다.
+          </div>
+        `;
+      } else {
+        resultHtml += `
+          <div style="margin-top:12px; font-size:0.9rem; color:#166534; background:#f0fdf4; padding:12px; border-radius:6px; border:1px solid #dcfce7;">
+            적격 여부 통과: 산정된 소득에 대비해 청산가치 보장의 원칙이 매우 이상적으로 조율되어, 쾌속 개시 결정이 예상되는 모범 포맷을 충족하고 있습니다. 즉각 접수를 권유드립니다.
+          </div>
+        `;
+      }
+
+      resultHtml += `
+          <div style="margin-top:15px; text-align:center;">
+            <a href="#contact" class="btn-cta" style="display:inline-block; font-size:0.9rem; padding:10px 20px;">이 결과를 기반으로 변호사 무상 서면 진단 예약하기</a>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('calc-result-box').innerHTML = resultHtml;
+    }
+  </script>
+  
